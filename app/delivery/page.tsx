@@ -1,8 +1,11 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
 import { CartProvider } from "@/lib/cart-context"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { useI18n } from "@/lib/i18n-context"
 import { Truck, RotateCcw, Clock, Globe, Shield, Leaf } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
@@ -31,12 +34,19 @@ const shippingInfo = [
 ]
 
 const sizeGuide = {
-  adult: [
+  women: [
     { size: "XS", chest: "86-91", waist: "71-76" },
     { size: "S", chest: "91-96", waist: "76-81" },
     { size: "M", chest: "96-101", waist: "81-86" },
     { size: "L", chest: "101-107", waist: "86-91" },
     { size: "XL", chest: "107-112", waist: "91-96" },
+  ],
+  men: [
+    { size: "XS", chest: "96-101", waist: "81-86" },
+    { size: "S", chest: "101-107", waist: "86-91" },
+    { size: "M", chest: "107-112", waist: "91-96" },
+    { size: "L", chest: "112-117", waist: "96-101" },
+    { size: "XL", chest: "117-122", waist: "101-107" },
   ],
   kids: [
     { size: "2-3y", height: "92-98", chest: "53-55" },
@@ -91,18 +101,20 @@ const faqs = [
 ]
 
 export default function DeliveryPage() {
+  const { t } = useI18n()
+
   return (
     <CartProvider>
       <Header />
       <CartDrawer />
       <main className="min-h-screen">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-          <Breadcrumb items={[{ label: "Delivery & Returns" }]} />
+          <Breadcrumb items={[{ label: t("delivery.title") }]} />
 
           <div className="text-center mb-12">
-            <h1 className="text-3xl lg:text-4xl font-semibold text-foreground">Delivery & Returns</h1>
+            <h1 className="text-3xl lg:text-4xl font-semibold text-foreground">{t("delivery.title")}</h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to know about getting your handcrafted pieces delivered safely to your door.
+              {t("delivery.subtitle")}
             </p>
           </div>
 
@@ -242,22 +254,47 @@ export default function DeliveryPage() {
 
           {/* Size Guide */}
           <section id="size-guide" className="mb-16 scroll-mt-24">
-            <h2 className="text-2xl font-semibold text-foreground mb-8">Size Guide</h2>
-            <div className="grid lg:grid-cols-2 gap-8">
-              {/* Adult Sizes */}
+            <h2 className="text-2xl font-semibold text-foreground mb-8">{t("delivery.sizeGuide")}</h2>
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Women Sizes */}
               <div className="bg-card rounded-xl p-6 border border-border">
-                <h3 className="text-lg font-semibold text-foreground mb-4">Adult Sizes (cm)</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-4">{t("delivery.sizeGuide.women")}</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border">
-                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">Size</th>
-                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">Chest</th>
-                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">Waist</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.size")}</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.chest")}</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.waist")}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {sizeGuide.adult.map((row) => (
+                      {sizeGuide.women.map((row) => (
+                        <tr key={row.size} className="border-b border-border/50">
+                          <td className="py-3 px-2 font-medium text-foreground">{row.size}</td>
+                          <td className="py-3 px-2 text-muted-foreground">{row.chest}</td>
+                          <td className="py-3 px-2 text-muted-foreground">{row.waist}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Men Sizes */}
+              <div className="bg-card rounded-xl p-6 border border-border">
+                <h3 className="text-lg font-semibold text-foreground mb-4">{t("delivery.sizeGuide.men")}</h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.size")}</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.chest")}</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.waist")}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {sizeGuide.men.map((row) => (
                         <tr key={row.size} className="border-b border-border/50">
                           <td className="py-3 px-2 font-medium text-foreground">{row.size}</td>
                           <td className="py-3 px-2 text-muted-foreground">{row.chest}</td>
@@ -271,14 +308,14 @@ export default function DeliveryPage() {
 
               {/* Kids Sizes */}
               <div className="bg-card rounded-xl p-6 border border-border">
-                <h3 className="text-lg font-semibold text-foreground mb-4">Kids Sizes (cm)</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-4">{t("delivery.sizeGuide.kids")}</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border">
-                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">Age</th>
-                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">Height</th>
-                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">Chest</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.age")}</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.height")}</th>
+                        <th className="text-left py-3 px-2 font-medium text-muted-foreground">{t("delivery.sizeGuide.chest")}</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -295,7 +332,7 @@ export default function DeliveryPage() {
               </div>
             </div>
             <p className="mt-4 text-sm text-muted-foreground text-center">
-              Not sure about your size? Contact us at hello@bymomshands.com and we'll help you find the perfect fit.
+              {t("delivery.sizeGuide.help")}
             </p>
           </section>
 

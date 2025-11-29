@@ -188,6 +188,16 @@ const translations: Record<Language, Translations> = {
     // Delivery Page
     "delivery.title": "Delivery & Returns",
     "delivery.subtitle": "Shipping Information",
+    "delivery.sizeGuide": "Size Guide",
+    "delivery.sizeGuide.women": "Women Sizes (cm)",
+    "delivery.sizeGuide.men": "Men Sizes (cm)",
+    "delivery.sizeGuide.kids": "Kids Sizes (cm)",
+    "delivery.sizeGuide.size": "Size",
+    "delivery.sizeGuide.chest": "Chest",
+    "delivery.sizeGuide.waist": "Waist",
+    "delivery.sizeGuide.age": "Age",
+    "delivery.sizeGuide.height": "Height",
+    "delivery.sizeGuide.help": "Not sure about your size? Contact us at hello@bymomshands.com and we'll help you find the perfect fit.",
 
     // Shop Page
     "shop.title": "All Products",
@@ -387,6 +397,16 @@ const translations: Record<Language, Translations> = {
     // Delivery Page
     "delivery.title": "Доставка и Връщане",
     "delivery.subtitle": "Информация за Доставка",
+    "delivery.sizeGuide": "Таблица с Размери",
+    "delivery.sizeGuide.women": "Размери за Жени (см)",
+    "delivery.sizeGuide.men": "Размери за Мъже (см)",
+    "delivery.sizeGuide.kids": "Размери за Деца (см)",
+    "delivery.sizeGuide.size": "Размер",
+    "delivery.sizeGuide.chest": "Гръден Обем",
+    "delivery.sizeGuide.waist": "Талия",
+    "delivery.sizeGuide.age": "Възраст",
+    "delivery.sizeGuide.height": "Височина",
+    "delivery.sizeGuide.help": "Не сте сигурни за размера си? Свържете се с нас на hello@bymomshands.com и ще ви помогнем да намерите перфектния размер.",
 
     // Shop Page
     "shop.title": "Всички Продукти",
