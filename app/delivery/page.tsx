@@ -15,7 +15,7 @@ const shippingInfo = [
     title: "Standard Shipping",
     description: "5-7 business days",
     price: "€8.00",
-    note: "Free on orders over €100",
+    note: "Free on orders over €250",
   },
   {
     icon: Clock,
@@ -66,7 +66,7 @@ const faqs = [
   {
     question: "Do you ship to my country?",
     answer:
-      "Yes! We ship to all European Union countries. Standard shipping costs €8 and is completely free on orders over €100.",
+      "Yes! We ship to all European Union countries. Standard shipping costs €8 and is completely free on orders over €250.",
   },
   {
     question: "How do I return an item?",
@@ -121,7 +121,7 @@ export default function DeliveryPage() {
           {/* Free Shipping Banner */}
           <div className="mb-12 p-6 bg-primary/10 rounded-xl text-center">
             <Truck className="h-10 w-10 mx-auto text-primary mb-3" />
-            <h2 className="text-xl font-semibold text-foreground">Free Shipping on Orders Over €100</h2>
+            <h2 className="text-xl font-semibold text-foreground">Free Shipping on Orders Over €250</h2>
             <p className="mt-2 text-muted-foreground">
               We ship to all European countries from our studio in Varna, Bulgaria
             </p>

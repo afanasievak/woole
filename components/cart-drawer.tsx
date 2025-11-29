@@ -12,7 +12,7 @@ export function CartDrawer() {
   const { items, isOpen, setIsOpen, removeItem, updateQuantity, totalPrice, clearCart } = useCart()
   const { t } = useI18n()
 
-  const FREE_SHIPPING_THRESHOLD = 100
+  const FREE_SHIPPING_THRESHOLD = 250
   const amountToFreeShipping = FREE_SHIPPING_THRESHOLD - totalPrice
 
   return (

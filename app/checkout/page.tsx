@@ -70,7 +70,7 @@ function CheckoutContent() {
     giftMessage: "",
   })
 
-  const FREE_SHIPPING_THRESHOLD = 100
+  const FREE_SHIPPING_THRESHOLD = 250
 
   const shippingOptions = [
     {
