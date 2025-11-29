@@ -66,7 +66,7 @@ export default function AboutPage() {
         <section className="relative h-96 lg:h-[500px]">
           <Image
             src="/cozy-knitting-workshop-warm-lighting-yarn-balls.jpg"
-            alt="By Mom's Hands workshop with artisans crafting knitwear"
+            alt="Woolé workshop with artisans crafting knitwear"
             fill
             className="object-cover"
           />
@@ -87,7 +87,7 @@ export default function AboutPage() {
             <div className="max-w-3xl mx-auto text-center">
               <Sparkles className="h-10 w-10 mx-auto text-primary mb-4" />
               <h2 className="text-2xl lg:text-3xl font-semibold text-foreground text-balance">
-                By Mom's Hands creates high-quality, handcrafted knitwear made with care, tradition, and purpose.
+                Woolé creates high-quality, handcrafted knitwear made with care, tradition, and purpose.
               </h2>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
                 We blend family heritage with modern design, using natural materials and eco-friendly practices to bring
@@ -112,7 +112,7 @@ export default function AboutPage() {
                 <h2 className="mt-2 text-3xl lg:text-4xl font-semibold text-foreground">Made with a Mother's Love</h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    By Mom's Hands began in a small home in Varna, Bulgaria, where my mother spent her evenings creating
+                    Woolé began in a small home in Varna, Bulgaria, where my mother spent her evenings creating
                     beautiful knitwear for our family. The rhythmic click of her needles and the soft warmth of fresh
                     wool became the soundtrack of my childhood.
                   </p>

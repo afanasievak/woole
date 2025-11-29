@@ -71,7 +71,7 @@ const faqs = [
   {
     question: "How do I return an item?",
     answer:
-      "You can return any unworn item within 30 days of delivery for a full refund. Items must be in original condition with tags attached. Simply email us at hello@bymomshands.com to initiate the process.",
+      "You can return any unworn item within 30 days of delivery for a full refund. Items must be in original condition with tags attached. Simply email us at hello@woole.com to initiate the process.",
   },
   {
     question: "Can I exchange for a different size?",
@@ -96,7 +96,7 @@ const faqs = [
   {
     question: "What is your quality guarantee?",
     answer:
-      "All By Mom's Hands products come with a 2-year quality guarantee. If any item shows defects in materials or craftsmanship under normal use, we'll repair or replace it free of charge.",
+      "All Woolé products come with a 2-year quality guarantee. If any item shows defects in materials or craftsmanship under normal use, we'll repair or replace it free of charge.",
   },
 ]
 

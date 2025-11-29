@@ -197,7 +197,7 @@ const translations: Record<Language, Translations> = {
     "delivery.sizeGuide.waist": "Waist",
     "delivery.sizeGuide.age": "Age",
     "delivery.sizeGuide.height": "Height",
-    "delivery.sizeGuide.help": "Not sure about your size? Contact us at hello@bymomshands.com and we'll help you find the perfect fit.",
+    "delivery.sizeGuide.help": "Not sure about your size? Contact us at hello@woole.com and we'll help you find the perfect fit.",
 
     // Shop Page
     "shop.title": "All Products",
@@ -406,7 +406,7 @@ const translations: Record<Language, Translations> = {
     "delivery.sizeGuide.waist": "Талия",
     "delivery.sizeGuide.age": "Възраст",
     "delivery.sizeGuide.height": "Височина",
-    "delivery.sizeGuide.help": "Не сте сигурни за размера си? Свържете се с нас на hello@bymomshands.com и ще ви помогнем да намерите перфектния размер.",
+    "delivery.sizeGuide.help": "Не сте сигурни за размера си? Свържете се с нас на hello@woole.com и ще ви помогнем да намерите перфектния размер.",
 
     // Shop Page
     "shop.title": "Всички Продукти",
