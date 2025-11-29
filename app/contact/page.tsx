@@ -158,9 +158,9 @@ export default function ContactPage() {
                       <p className="text-muted-foreground">
                         Woolé Workshop
                         <br />
-                        Bergstrasse 42
+                        Knyaz Alexander I Boulevard 12
                         <br />
-                        8001 Zürich, Switzerland
+                        Varna, Bulgaria
                       </p>
                     </div>
                   </div>
