@@ -12,9 +12,9 @@ const translations: Record<Language, Translations> = {
   en: {
     // Navigation
     "nav.shop": "Shop",
-    "nav.for-him": "For Him", 
-    "nav.for-her": "For Her",
-    "nav.for-kids": "For Kids",
+    "nav.forHim": "For Him", 
+    "nav.forHer": "For Her",
+    "nav.forKids": "For Kids",
     "nav.gifts": "Gifts",
     "nav.about": "About",
     "nav.delivery": "Delivery",
