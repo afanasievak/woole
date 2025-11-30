@@ -3,7 +3,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider } from "@/lib/cart-context"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { useI18n } from "@/lib/i18n-context"
 import { Truck, RotateCcw, Clock, Globe, Shield, Leaf } from "lucide-react"
@@ -38,7 +37,7 @@ export default function DeliveryPage() {
   const { t } = useI18n()
 
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main className="min-h-screen">
@@ -343,6 +342,6 @@ export default function DeliveryPage() {
         </div>
       </main>
       <Footer />
-    </CartProvider>
+    </>
   )
 }

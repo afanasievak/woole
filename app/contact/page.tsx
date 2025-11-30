@@ -1,37 +1,36 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider } from "@/lib/cart-context"
-import { Breadcrumb } from "@/components/breadcrumb"
-import { useI18n } from "@/lib/i18n-context"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, Clock, Instagram, Facebook } from "lucide-react"
+import { Breadcrumb } from "@/components/breadcrumb";
+import { CartDrawer } from "@/components/cart-drawer";
+import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { useI18n } from "@/lib/i18n-context";
+import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
-  const { t } = useI18n()
-  const [submitted, setSubmitted] = useState(false)
+  const { t } = useI18n();
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main className="min-h-screen">
@@ -39,7 +38,9 @@ export default function ContactPage() {
           <Breadcrumb items={[{ label: t("nav.contact") }]} />
 
           <div className="text-center mb-12">
-            <h1 className="text-3xl lg:text-4xl font-semibold text-foreground">{t("contact.title")}</h1>
+            <h1 className="text-3xl lg:text-4xl font-semibold text-foreground">
+              {t("contact.title")}
+            </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               {t("contact.description")}
             </p>
@@ -53,15 +54,22 @@ export default function ContactPage() {
                   <div className="w-16 h-16 mx-auto rounded-full bg-primary/10 text-primary flex items-center justify-center">
                     <Mail className="h-8 w-8" />
                   </div>
-                  <h2 className="mt-6 text-2xl font-semibold text-foreground">{t("contact.sent")}</h2>
+                  <h2 className="mt-6 text-2xl font-semibold text-foreground">
+                    {t("contact.sent")}
+                  </h2>
                   <p className="mt-2 text-muted-foreground">
                     {t("contact.sentDescription")}
                   </p>
                   <Button
                     className="mt-6"
                     onClick={() => {
-                      setSubmitted(false)
-                      setFormData({ name: "", email: "", subject: "", message: "" })
+                      setSubmitted(false);
+                      setFormData({
+                        name: "",
+                        email: "",
+                        subject: "",
+                        message: "",
+                      });
                     }}
                   >
                     {t("contact.sendAnother")}
@@ -76,7 +84,9 @@ export default function ContactPage() {
                         id="name"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                         placeholder={t("contact.namePlaceholder")}
                       />
                     </div>
@@ -87,7 +97,9 @@ export default function ContactPage() {
                         type="email"
                         required
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                         placeholder={t("contact.emailPlaceholder")}
                       />
                     </div>
@@ -98,7 +110,9 @@ export default function ContactPage() {
                       id="subject"
                       required
                       value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, subject: e.target.value })
+                      }
                       placeholder={t("contact.subjectPlaceholder")}
                     />
                   </div>
@@ -109,7 +123,9 @@ export default function ContactPage() {
                       required
                       rows={5}
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       placeholder={t("contact.messagePlaceholder")}
                     />
                   </div>
@@ -118,19 +134,43 @@ export default function ContactPage() {
                   </Button>
                 </form>
               )}
+
+              {/* Map Section */}
+              <div className="mt-8 pt-8 border-t border-border">
+                <p className="font-medium text-foreground mb-4">
+                  {t("contact.location")}
+                </p>
+                <div className="rounded-lg overflow-hidden border border-border">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.597595261998!2d27.895757976396943!3d43.21792887112609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a45486577bb3f7%3A0x5226892607aebd19!2sGrand%20Mall!5e0!3m2!1sen!2ssk!4v1764521174610!5m2!1sen!2ssk"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full"
+                    title="Woolé Workshop Location"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-xl font-semibold text-foreground mb-6">{t("contact.info")}</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-6">
+                  {t("contact.info")}
+                </h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                       <Mail className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{t("contact.emailLabel")}</p>
+                      <p className="font-medium text-foreground">
+                        {t("contact.emailLabel")}
+                      </p>
                       <a
                         href="mailto:hello@woole.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
@@ -144,8 +184,13 @@ export default function ContactPage() {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{t("contact.Label")}</p>
-                      <a href="tel:+359897922541text-muted-foreground hover:text-primary transition-colors">
+                      <p className="font-medium text-foreground">
+                        {t("contact.phoneLabel")}
+                      </p>
+                      <a
+                        href="tel:+359897922541"
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
                         +359 89 792 2541
                       </a>
                     </div>
@@ -155,7 +200,9 @@ export default function ContactPage() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{t("contact.addressLabel")}</p>
+                      <p className="font-medium text-foreground">
+                        {t("contact.addressLabel")}
+                      </p>
                       <p className="text-muted-foreground">
                         Woolé Workshop
                         <br />
@@ -170,7 +217,9 @@ export default function ContactPage() {
                       <Clock className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{t("contact.hours")}</p>
+                      <p className="font-medium text-foreground">
+                        {t("contact.hours")}
+                      </p>
                       <p className="text-muted-foreground">
                         {t("contact.hours.weekday")}
                         <br />
@@ -184,7 +233,9 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8 border-t border-border">
-                <h2 className="text-xl font-semibold text-foreground mb-6">{t("contact.followUs")}</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-6">
+                  {t("contact.followUs")}
+                </h2>
                 <p className="text-muted-foreground mb-4">
                   {t("contact.followUsDescription")}
                 </p>
@@ -207,7 +258,9 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-8 border-t border-border">
-                <h2 className="text-xl font-semibold text-foreground mb-4">{t("contact.faq")}</h2>
+                <h2 className="text-xl font-semibold text-foreground mb-4">
+                  {t("contact.faq")}
+                </h2>
                 <p className="text-muted-foreground">
                   {t("contact.faqDescription")}{" "}
                   <a href="/delivery" className="text-primary hover:underline">
@@ -221,6 +274,6 @@ export default function ContactPage() {
         </div>
       </main>
       <Footer />
-    </CartProvider>
-  )
+    </>
+  );
 }

@@ -1,7 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider } from "@/lib/cart-context"
 import { HeroSection } from "@/components/hero-section"
 import { CategoryShowcase } from "@/components/category-showcase"
 import { FeaturedProducts } from "@/components/featured-products"
@@ -10,7 +9,7 @@ import { Newsletter } from "@/components/newsletter"
 
 export default function HomePage() {
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main>
@@ -21,6 +20,6 @@ export default function HomePage() {
         <Newsletter />
       </main>
       <Footer />
-    </CartProvider>
+    </>
   )
 }

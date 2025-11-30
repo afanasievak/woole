@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider, useCart } from "@/lib/cart-context"
+import { useCart } from "@/lib/cart-context"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -226,9 +226,5 @@ function ProductDetailContent() {
 }
 
 export default function ProductPage() {
-  return (
-    <CartProvider>
-      <ProductDetailContent />
-    </CartProvider>
-  )
+  return <ProductDetailContent />
 }

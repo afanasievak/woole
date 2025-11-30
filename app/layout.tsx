@@ -4,6 +4,7 @@ import { Cormorant_Garamond, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { I18nProvider } from "@/lib/i18n-context"
+import { CartProvider } from "@/lib/cart-context"
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
@@ -44,7 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${cormorant.variable} font-sans antialiased`}>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <CartProvider>{children}</CartProvider>
+        </I18nProvider>
         <Analytics />
       </body>
     </html>
