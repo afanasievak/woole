@@ -12,8 +12,8 @@ const translations: Record<Language, Translations> = {
   en: {
     // Navigation
     "nav.shop": "Shop",
-    "nav.forHim": "For Him", 
-    "nav.forHer": "For Her",
+    "nav.for-him": "For Him", 
+    "nav.for-her": "For Her",
     "nav.forKids": "For Kids",
     "nav.gifts": "Gifts",
     "nav.about": "About",
@@ -375,15 +375,7 @@ const translations: Record<Language, Translations> = {
     "material.cotton": "100% Cotton",
     "material.cashmere": "100% Cashmere",
 
-    // Categories
-    "category.forHim": "For Him",
-    "category.forHim.description": "Timeless sweaters crafted for the modern gentleman",
-    "category.forHer": "For Her",
-    "category.forHer.description": "Luxurious knitwear designed for effortless elegance",
-    "category.forKids": "For Kids",
-    "category.forKids.description": "Gentle warmth for your most important ones",
-    "category.gifts": "Gifts",
-    "category.gifts.description": "Thoughtful pieces for hearts you treasure",
+   
 
     // Colors
     "color.charcoal": "Charcoal",
@@ -769,15 +761,7 @@ const translations: Record<Language, Translations> = {
     "material.cotton": "100% Памук",
     "material.cashmere": "100% Кашмир",
 
-    // Categories
-    "category.forHim": "За Него",
-    "category.forHim.description": "Вечни пуловери, изработени за модерния джентълмен",
-    "category.forHer": "За Нея",
-    "category.forHer.description": "Луксозни плетива, проектирани за безпроблемна елегантност",
-    "category.forKids": "За Деца",
-    "category.forKids.description": "Нежна топлина за най-важните за вас",
-    "category.gifts": "Подаръци",
-    "category.gifts.description": "Вмислени изделия за сърца, които цените",
+  
 
     // Colors
     "color.charcoal": "Въглен",
