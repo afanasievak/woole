@@ -398,7 +398,7 @@ const translations: Record<Language, Translations> = {
     // Product Detail Page
     "productDetail.addToBag": "Add to Bag",
     "productDetail.specialPiece": "Special Piece",
-    "productDetail.freeShippingOver": "Free shipping on orders over €150",
+    "productDetail.freeShippingOver": "Free shipping on orders over €250",
     "productDetail.returnsPolicy": "30-day returns policy",
     "productDetail.qualityGuarantee": "2-year quality guarantee",
     "common.explore": "Explore",
