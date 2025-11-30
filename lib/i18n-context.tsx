@@ -792,7 +792,7 @@ const translations: Record<Language, Translations> = {
     // Product Detail Page
     "productDetail.addToBag": "Добави в Чантата",
     "productDetail.specialPiece": "Специално Изделие",
-    "productDetail.freeShippingOver": "Безплатна доставка за поръчки над €150",
+    "productDetail.freeShippingOver": "Безплатна доставка за поръчки над €250",
     "productDetail.returnsPolicy": "30-дневна политика за връщане",
     "productDetail.qualityGuarantee": "2-годишна гаранция за качество",
     "common.explore": "Разгледай",
