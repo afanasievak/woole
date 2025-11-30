@@ -144,9 +144,9 @@ export default function ContactPage() {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{t("contact.phoneLabel")}</p>
-                      <a href="tel:+41441234567" className="text-muted-foreground hover:text-primary transition-colors">
-                        +41 44 123 45 67
+                      <p className="font-medium text-foreground">{t("contact.Label")}</p>
+                      <a href="tel:+359897922541text-muted-foreground hover:text-primary transition-colors">
+                        +359 89 792 2541
                       </a>
                     </div>
                   </div>
