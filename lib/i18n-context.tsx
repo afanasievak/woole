@@ -41,6 +41,14 @@ const translations: Record<Language, Translations> = {
     // Categories
     "categories.title": "Shop by Category",
     "categories.subtitle": "Collections",
+    "category.forHim": "For Him",
+    "category.forHer": "For Her",
+    "category.forKids": "For Kids",
+    "category.gifts": "Gifts",
+    "category.for-him.description": "Timeless sweaters crafted for the modern gentleman",
+    "category.for-her.description": "Luxurious knitwear designed for effortless elegance",
+    "category.for-kids.description": "Gentle warmth for your most important ones",
+    "category.gifts.description": "Thoughtful pieces for hearts you treasure",
 
     // Featured Products
     "featured.title": "Special Pieces",
@@ -427,6 +435,14 @@ const translations: Record<Language, Translations> = {
     // Categories
     "categories.title": "Пазарувай по Категория",
     "categories.subtitle": "Колекции",
+    "category.forHim": "За Него",
+    "category.forHer": "За Нея",
+    "category.forKids": "За Деца",
+    "category.gifts": "Подаръци",
+    "category.for-him.description": "Вечни пуловери, изработени за модерния джентълмен",
+    "category.for-her.description": "Луксозни плетива, проектирани за безпроблемна елегантност",
+    "category.for-kids.description": "Нежна топлина за най-важните за вас",
+    "category.gifts.description": "Вмислени изделия за сърца, които цените",
 
     // Featured Products
     "featured.title": "Специални Изделия",
