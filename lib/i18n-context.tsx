@@ -12,9 +12,9 @@ const translations: Record<Language, Translations> = {
   en: {
     // Navigation
     "nav.shop": "Shop",
-    "nav.forHim": "For Him",
-    "nav.forHer": "For Her",
-    "nav.forKids": "For Kids",
+    "nav.for-him": "For Him", 
+    "nav.for-her": "For Her",
+    "nav.for-kids": "For Kids",
     "nav.gifts": "Gifts",
     "nav.about": "About",
     "nav.delivery": "Delivery",
@@ -806,12 +806,6 @@ interface I18nContextType {
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
-const materials = [
-  { value: "All Materials", label: t("shop.allMaterials") },
-  { value: "Wool", label: "Вълна" },
-  { value: "Cashmere", label: "Кашмир" },
-  { value: "Cotton", label: "Памук" },
-]
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
