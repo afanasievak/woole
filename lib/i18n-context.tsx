@@ -332,6 +332,9 @@ const translations: Record<Language, Translations> = {
     "shop.sortNewest": "Newest",
     "shop.material": "Material",
     "shop.allMaterials": "All Materials",
+    "shop.material.wool": "Wool",
+    "shop.material.cashmere": "Cashmere",
+    "shop.material.cotton": "Cotton",
     "shop.products": "products",
     "shop.breadcrumb": "Shop",
 
@@ -726,6 +729,9 @@ const translations: Record<Language, Translations> = {
     "shop.sortNewest": "Най-нови",
     "shop.material": "Материал",
     "shop.allMaterials": "Всички Материали",
+    "shop.material.wool": "Вълна",
+    "shop.material.cashmere": "Кашмир",
+    "shop.material.cotton": "Памук",
     "shop.products": "продукти",
     "shop.breadcrumb": "Магазин",
 

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Instagram, Facebook, Mail } from "lucide-react"
-import { useI18n } from "@/lib/i18n-context"
+import { useI18n } from "@/lib/i18n-context";
+import { Facebook, Instagram, Mail } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
   const footerNavigation = {
     shop: [
@@ -25,7 +25,7 @@ export function Footer() {
       { name: t("footer.deliveryReturns"), href: "/delivery" },
       { name: t("footer.sizeGuide"), href: "/delivery" },
     ],
-  }
+  };
 
   return (
     <footer className="bg-secondary/50 border-t border-border">
@@ -34,20 +34,33 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-semibold tracking-wide text-foreground">Woolé</span>
+              <span className="text-2xl font-semibold tracking-wide text-foreground">
+                Woolé
+              </span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">{t("footer.description")}</p>
+            <p className="mt-4 text-sm text-muted-foreground max-w-xs leading-relaxed">
+              {t("footer.description")}
+            </p>
             <div className="mt-6 flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="https://www.instagram.com/afanasieva.ksu/?hl=en"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a
+                href="https://www.facebook.com/profile.php?id=100021967820725"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </a>
               <a
                 href="mailto:hello@woole.com"
+                target="_blank"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="h-5 w-5" />
@@ -58,7 +71,9 @@ export function Footer() {
 
           {/* Shop */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">{t("footer.shop")}</h3>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              {t("footer.shop")}
+            </h3>
             <ul className="mt-4 space-y-3">
               {footerNavigation.shop.map((item) => (
                 <li key={item.href + item.name}>
@@ -75,7 +90,9 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">{t("footer.company")}</h3>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              {t("footer.company")}
+            </h3>
             <ul className="mt-4 space-y-3">
               {footerNavigation.company.map((item) => (
                 <li key={item.href + item.name}>
@@ -92,7 +109,9 @@ export function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">{t("footer.support")}</h3>
+            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
+              {t("footer.support")}
+            </h3>
             <ul className="mt-4 space-y-3">
               {footerNavigation.support.map((item) => (
                 <li key={item.href + item.name}>
@@ -115,5 +134,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

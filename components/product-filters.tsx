@@ -22,9 +22,9 @@ export function ProductFilters({
 
   const materials = [
     { value: "All Materials", label: t("shop.allMaterials") },
-    { value: "Wool", label: "Wool" },
-    { value: "Cashmere", label: "Cashmere" },
-    { value: "Cotton", label: "Cotton" },
+    { value: "Wool", label: t("shop.material.wool") },
+    { value: "Cashmere", label: t("shop.material.cashmere") },
+    { value: "Cotton", label: t("shop.material.cotton") },
   ]
 
   const sortOptions = [
