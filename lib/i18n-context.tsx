@@ -254,6 +254,9 @@ const translations: Record<Language, Translations> = {
     "contact.faqDescription": "Before reaching out, you might find your answer in our",
     "contact.faqLink": "Delivery & Returns",
     "contact.faqLinkEnd": " page, which covers shipping, sizing, and our return policy.",
+    "contact.location": "Our Location",
+    "contact.address": "Address",
+    "contact.Label": "Phone",
 
     // Delivery Page
     "delivery.title": "Delivery & Returns",
@@ -651,6 +654,9 @@ const translations: Record<Language, Translations> = {
     "contact.faqDescription": "Преди да се свържете, може да намерите отговора си в нашата страница",
     "contact.faqLink": "Доставка и Връщане",
     "contact.faqLinkEnd": ", която покрива доставката, размерите и нашата политика за връщане.",
+    "contact.location": "Нашето Местоположение",
+    "contact.address": "Адрес",
+    "contact.Label": "Телефон",
 
     // Delivery Page
     "delivery.title": "Доставка и Връщане",
