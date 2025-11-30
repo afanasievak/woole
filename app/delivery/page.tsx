@@ -9,30 +9,6 @@ import { useI18n } from "@/lib/i18n-context"
 import { Truck, RotateCcw, Clock, Globe, Shield, Leaf } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-const shippingInfo = [
-  {
-    icon: Truck,
-    title: "Standard Shipping",
-    description: "5-7 business days",
-    price: "€8.00",
-    note: "Free on orders over €250",
-  },
-  {
-    icon: Clock,
-    title: "Express Shipping",
-    description: "2-3 business days",
-    price: "€15.00",
-    note: "Order by 2pm for same-day dispatch",
-  },
-  {
-    icon: Globe,
-    title: "Europe-Wide Delivery",
-    description: "All EU countries",
-    price: "From €8.00",
-    note: "Shipped from Bulgaria",
-  },
-]
-
 const sizeGuide = {
   women: [
     { size: "XS", chest: "86-91", waist: "71-76" },
@@ -57,48 +33,6 @@ const sizeGuide = {
   ],
 }
 
-const faqs = [
-  {
-    question: "How long does shipping take?",
-    answer:
-      "Standard shipping within Europe takes 5-7 business days. Express shipping is 2-3 business days. All orders are shipped from our studio in Varna, Bulgaria.",
-  },
-  {
-    question: "Do you ship to my country?",
-    answer:
-      "Yes! We ship to all European Union countries. Standard shipping costs €8 and is completely free on orders over €250.",
-  },
-  {
-    question: "How do I return an item?",
-    answer:
-      "You can return any unworn item within 30 days of delivery for a full refund. Items must be in original condition with tags attached. Simply email us at hello@woole.com to initiate the process.",
-  },
-  {
-    question: "Can I exchange for a different size?",
-    answer:
-      "If you need a different size, please return your item for a refund and place a new order for the size you need. This ensures the fastest delivery of your replacement.",
-  },
-  {
-    question: "How should I care for my knitwear?",
-    answer:
-      "We recommend hand washing in cool water with a gentle detergent. Lay flat to dry away from direct heat or sunlight. For cashmere items, store folded in a breathable bag to protect from moths.",
-  },
-  {
-    question: "Do you offer gift wrapping?",
-    answer:
-      "Yes! We offer complimentary gift wrapping on all orders. Simply select the gift wrap option at checkout and include a personal message if you'd like. All packaging is eco-friendly and biodegradable.",
-  },
-  {
-    question: "What materials do you use?",
-    answer:
-      "We use only natural fibers: 100% wool, organic cotton, and premium cashmere. All materials are sourced from eco-certified suppliers in Bulgaria and neighboring EU countries.",
-  },
-  {
-    question: "What is your quality guarantee?",
-    answer:
-      "All Woolé products come with a 2-year quality guarantee. If any item shows defects in materials or craftsmanship under normal use, we'll repair or replace it free of charge.",
-  },
-]
 
 export default function DeliveryPage() {
   const { t } = useI18n()
@@ -121,65 +55,81 @@ export default function DeliveryPage() {
           {/* Free Shipping Banner */}
           <div className="mb-12 p-6 bg-primary/10 rounded-xl text-center">
             <Truck className="h-10 w-10 mx-auto text-primary mb-3" />
-            <h2 className="text-xl font-semibold text-foreground">Free Shipping on Orders Over €250</h2>
+            <h2 className="text-xl font-semibold text-foreground">{t("delivery.freeShippingBanner")}</h2>
             <p className="mt-2 text-muted-foreground">
-              We ship to all European countries from our studio in Varna, Bulgaria
+              {t("delivery.freeShippingText")}
             </p>
           </div>
 
           {/* Shipping Options */}
           <section className="mb-16">
-            <h2 className="text-2xl font-semibold text-foreground mb-8">Shipping Options</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-8">{t("delivery.shippingOptions")}</h2>
             <div className="grid sm:grid-cols-3 gap-6">
-              {shippingInfo.map((option) => (
-                <div key={option.title} className="bg-card rounded-xl p-6 border border-border">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                    <option.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold text-foreground">{option.title}</h3>
-                  <p className="mt-1 text-muted-foreground">{option.description}</p>
-                  <p className="mt-3 text-xl font-semibold text-foreground">{option.price}</p>
-                  <p className="mt-1 text-sm text-primary">{option.note}</p>
+              <div className="bg-card rounded-xl p-6 border border-border">
+                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                  <Truck className="h-6 w-6" />
                 </div>
-              ))}
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t("delivery.shipping.standard.title")}</h3>
+                <p className="mt-1 text-muted-foreground">{t("delivery.shipping.standard.description")}</p>
+                <p className="mt-3 text-xl font-semibold text-foreground">{t("delivery.shipping.standard.price")}</p>
+                <p className="mt-1 text-sm text-primary">{t("delivery.shipping.standard.note")}</p>
+              </div>
+              <div className="bg-card rounded-xl p-6 border border-border">
+                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                  <Clock className="h-6 w-6" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t("delivery.shipping.express.title")}</h3>
+                <p className="mt-1 text-muted-foreground">{t("delivery.shipping.express.description")}</p>
+                <p className="mt-3 text-xl font-semibold text-foreground">{t("delivery.shipping.express.price")}</p>
+                <p className="mt-1 text-sm text-primary">{t("delivery.shipping.express.note")}</p>
+              </div>
+              <div className="bg-card rounded-xl p-6 border border-border">
+                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                  <Globe className="h-6 w-6" />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t("delivery.shipping.europe.title")}</h3>
+                <p className="mt-1 text-muted-foreground">{t("delivery.shipping.europe.description")}</p>
+                <p className="mt-3 text-xl font-semibold text-foreground">{t("delivery.shipping.europe.price")}</p>
+                <p className="mt-1 text-sm text-primary">{t("delivery.shipping.europe.note")}</p>
+              </div>
             </div>
           </section>
 
           {/* Shipping Process */}
           <section className="mb-16 bg-secondary/30 rounded-xl p-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">How It Works</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-8 text-center">{t("delivery.howItWorks")}</h2>
             <div className="grid sm:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="w-12 h-12 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                   1
                 </div>
-                <h3 className="mt-4 font-semibold text-foreground">Order</h3>
+                <h3 className="mt-4 font-semibold text-foreground">{t("delivery.step.order")}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Place your order online and receive instant confirmation
+                  {t("delivery.step.orderDesc")}
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                   2
                 </div>
-                <h3 className="mt-4 font-semibold text-foreground">Handcraft</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Your piece is lovingly crafted in our Varna studio</p>
+                <h3 className="mt-4 font-semibold text-foreground">{t("delivery.step.handcraft")}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t("delivery.step.handcraftDesc")}</p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                   3
                 </div>
-                <h3 className="mt-4 font-semibold text-foreground">Ship</h3>
+                <h3 className="mt-4 font-semibold text-foreground">{t("delivery.step.ship")}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Packed in eco-friendly materials with tracking details sent via email
+                  {t("delivery.step.shipDesc")}
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-12 h-12 mx-auto rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                   4
                 </div>
-                <h3 className="mt-4 font-semibold text-foreground">Enjoy</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Unbox and enjoy your new handcrafted knitwear</p>
+                <h3 className="mt-4 font-semibold text-foreground">{t("delivery.step.enjoy")}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{t("delivery.step.enjoyDesc")}</p>
               </div>
             </div>
           </section>
@@ -191,19 +141,19 @@ export default function DeliveryPage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                   <RotateCcw className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">30-Day Returns</h3>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t("delivery.returns.title")}</h3>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Items must be unworn with tags attached
+                    {t("delivery.returns.item1")}
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Return shipping within EU is free
+                    {t("delivery.returns.item2")}
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Refunds processed within 5-7 days
+                    {t("delivery.returns.item3")}
                   </li>
                 </ul>
               </div>
@@ -212,19 +162,19 @@ export default function DeliveryPage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                   <Shield className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">Quality Guarantee</h3>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t("delivery.guarantee.title")}</h3>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    2-year craftsmanship guarantee
+                    {t("delivery.guarantee.item1")}
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Free repairs for any defects
+                    {t("delivery.guarantee.item2")}
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Valid with proof of purchase
+                    {t("delivery.guarantee.item3")}
                   </li>
                 </ul>
               </div>
@@ -233,19 +183,19 @@ export default function DeliveryPage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
                   <Leaf className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">Eco Packaging</h3>
+                <h3 className="mt-4 text-lg font-semibold text-foreground">{t("delivery.packaging.title")}</h3>
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Biodegradable paper boxes
+                    {t("delivery.packaging.item1")}
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Plastic-free shipping materials
+                    {t("delivery.packaging.item2")}
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    Reusable tissue paper wrapping
+                    {t("delivery.packaging.item3")}
                   </li>
                 </ul>
               </div>
@@ -338,16 +288,56 @@ export default function DeliveryPage() {
 
           {/* FAQ */}
           <section className="mb-16">
-            <h2 className="text-2xl font-semibold text-foreground mb-8">Frequently Asked Questions</h2>
+            <h2 className="text-2xl font-semibold text-foreground mb-8">{t("delivery.faq.title")}</h2>
             <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`faq-${index}`}>
-                  <AccordionTrigger className="text-left text-foreground hover:text-primary">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
+              <AccordionItem value="faq-1">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.shippingTime.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.shippingTime.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-2">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.shipCountry.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.shipCountry.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-3">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.return.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.return.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-4">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.exchange.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.exchange.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-5">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.care.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.care.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-6">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.giftWrap.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.giftWrap.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-7">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.materials.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.materials.answer")}</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="faq-8">
+                <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                  {t("delivery.faq.guarantee.question")}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">{t("delivery.faq.guarantee.answer")}</AccordionContent>
+              </AccordionItem>
             </Accordion>
           </section>
         </div>

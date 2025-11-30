@@ -9,14 +9,16 @@ import { CartProvider } from "@/lib/cart-context"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductFilters } from "@/components/product-filters"
 import { Breadcrumb } from "@/components/breadcrumb"
+import { useI18n } from "@/lib/i18n-context"
 import { getProductsByCategory, getCategoryBySlug } from "@/lib/products"
 
 export default function CategoryPage() {
+  const { t } = useI18n()
   const params = useParams()
   const categorySlug = params.category as string
   const category = getCategoryBySlug(categorySlug)
 
-  const [selectedMaterial, setSelectedMaterial] = useState("All Materials")
+  const [selectedMaterial, setSelectedMaterial] = useState(t("shop.allMaterials"))
   const [selectedSort, setSelectedSort] = useState("featured")
 
   const categoryProducts = getProductsByCategory(categorySlug)
@@ -24,7 +26,7 @@ export default function CategoryPage() {
   const filteredProducts = useMemo(() => {
     let filtered = [...categoryProducts]
 
-    if (selectedMaterial !== "All Materials") {
+    if (selectedMaterial !== t("shop.allMaterials")) {
       filtered = filtered.filter((p) => p.material.toLowerCase().includes(selectedMaterial.toLowerCase()))
     }
 
@@ -43,7 +45,7 @@ export default function CategoryPage() {
     }
 
     return filtered
-  }, [categoryProducts, selectedMaterial, selectedSort])
+  }, [categoryProducts, selectedMaterial, selectedSort, t])
 
   if (!category) {
     notFound()
@@ -71,7 +73,7 @@ export default function CategoryPage() {
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-          <Breadcrumb items={[{ label: "Shop", href: "/shop" }, { label: category.name }]} />
+          <Breadcrumb items={[{ label: t("shop.breadcrumb"), href: "/shop" }, { label: category.name }]} />
 
           <ProductFilters
             selectedMaterial={selectedMaterial}
@@ -81,7 +83,7 @@ export default function CategoryPage() {
           />
 
           <div className="mt-8">
-            <p className="text-sm text-muted-foreground mb-6">{filteredProducts.length} products</p>
+            <p className="text-sm text-muted-foreground mb-6">{filteredProducts.length} {t("shop.products")}</p>
             <ProductGrid products={filteredProducts} />
           </div>
         </div>

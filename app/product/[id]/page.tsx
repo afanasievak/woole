@@ -14,12 +14,14 @@ import { Badge } from "@/components/ui/badge"
 import { getProductById, getProductsByCategory, getCategoryBySlug } from "@/lib/products"
 import { ProductCard } from "@/components/product-card"
 import { Check, Truck, RotateCcw, Shield } from "lucide-react"
+import { useI18n } from "@/lib/i18n-context"
 
 function ProductDetailContent() {
   const params = useParams()
   const productId = params.id as string
   const product = getProductById(productId)
   const { addItem } = useCart()
+  const { t } = useI18n()
 
   const [selectedColor, setSelectedColor] = useState(product?.colors[0] || "")
   const [selectedSize, setSelectedSize] = useState(product?.sizes[0] || "")
@@ -85,7 +87,9 @@ function ProductDetailContent() {
                 <p className="mt-4 text-2xl font-semibold text-foreground">€{product.price}</p>
               </div>
 
-              <p className="mt-6 text-muted-foreground leading-relaxed">{product.description}</p>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                {t(`product.${product.id}.description`) || product.description}
+              </p>
 
               <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
                 <Check className="h-4 w-4 text-primary" />
