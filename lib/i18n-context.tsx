@@ -334,6 +334,24 @@ const translations: Record<Language, Translations> = {
     "common.openMenu": "Open menu",
     "common.shoppingCart": "Shopping cart",
 
+    // Product Names
+    "product.him-1.name": "Classic Wool Crewneck",
+    "product.him-2.name": "Cotton Everyday Pullover",
+    "product.him-3.name": "Cashmere Essential V-Neck",
+    "product.him-4.name": "Wool Fisherman Knit",
+    "product.her-1.name": "Cashmere Soft Turtleneck",
+    "product.her-2.name": "Wool Ribbed Cardigan",
+    "product.her-3.name": "Cotton Everyday Knit Top",
+    "product.her-4.name": "Cashmere Wrap Sweater",
+    "product.kid-1.name": "Wool Cozy Kids Crew",
+    "product.kid-2.name": "Cotton Play Sweater",
+    "product.kid-3.name": "Kid's Cashmere Hug Pullover",
+    "product.kid-4.name": "Wool Mini Fisherman Knit",
+    "product.gift-1.name": "Cashmere Heart Beanie",
+    "product.gift-2.name": "Wool Heart Cable Knit",
+    "product.gift-3.name": "Cashmere Gift Scarf",
+    "product.gift-4.name": "Cotton Relax Gift Set",
+
     // Product Descriptions
     "product.him-1.description": "A timeless wool crewneck designed for everyday comfort. Warm, soft, and durable—perfect for layering or wearing on its own.",
     "product.him-2.description": "A lightweight cotton pullover that balances breathability with a structured silhouette. Ideal for all-season wear.",
@@ -351,6 +369,39 @@ const translations: Record<Language, Translations> = {
     "product.gift-2.description": "A classic cable knit sweater with subtle woven heart-inspired patterning—perfect for meaningful gifting.",
     "product.gift-3.description": "Exceptionally soft scarf designed for gifting loved ones (or yourself). Delicate texture and timeless style.",
     "product.gift-4.description": "A light, breathable two-piece set (top + mini wrap scarf) made for cozy moments. Perfect for care packages or thoughtful surprises.",
+
+    // Materials
+    "material.wool": "100% Wool",
+    "material.cotton": "100% Cotton",
+    "material.cashmere": "100% Cashmere",
+
+    // Categories
+    "category.forHim": "For Him",
+    "category.forHim.description": "Timeless sweaters crafted for the modern gentleman",
+    "category.forHer": "For Her",
+    "category.forHer.description": "Luxurious knitwear designed for effortless elegance",
+    "category.forKids": "For Kids",
+    "category.forKids.description": "Gentle warmth for your most important ones",
+    "category.gifts": "Gifts",
+    "category.gifts.description": "Thoughtful pieces for hearts you treasure",
+
+    // Colors
+    "color.charcoal": "Charcoal",
+    "color.cream": "Cream",
+    "color.deepNavy": "Deep Navy",
+    "color.lightGrey": "Light Grey",
+    "color.sand": "Sand",
+    "color.forestGreen": "Forest Green",
+    "color.softPink": "Soft Pink",
+    "color.burgundy": "Burgundy",
+
+    // Product Detail Page
+    "productDetail.addToBag": "Add to Bag",
+    "productDetail.specialPiece": "Special Piece",
+    "productDetail.freeShippingOver": "Free shipping on orders over €150",
+    "productDetail.returnsPolicy": "30-day returns policy",
+    "productDetail.qualityGuarantee": "2-year quality guarantee",
+    "common.explore": "Explore",
   },
   bg: {
     // Navigation
@@ -677,6 +728,24 @@ const translations: Record<Language, Translations> = {
     "common.openMenu": "Отвори меню",
     "common.shoppingCart": "Пазарска количка",
 
+    // Product Names
+    "product.him-1.name": "Класически Вълнен Пуловер",
+    "product.him-2.name": "Памучен Ежедневен Пуловер",
+    "product.him-3.name": "Кашмирен V-образен Врат",
+    "product.him-4.name": "Вълнено Рибарско Плетиво",
+    "product.her-1.name": "Кашмирен Мек Пуловер с Висока Яка",
+    "product.her-2.name": "Вълнен Рибен Кардиган",
+    "product.her-3.name": "Памучен Ежедневен Плетен Топ",
+    "product.her-4.name": "Кашмирен Пуловер в Стил Обвивка",
+    "product.kid-1.name": "Вълнен Уютен Детски Пуловер",
+    "product.kid-2.name": "Памучен Игрален Пуловер",
+    "product.kid-3.name": "Детски Кашмирен Прегръдка Пуловер",
+    "product.kid-4.name": "Вълнено Мини Рибарско Плетиво",
+    "product.gift-1.name": "Кашмирена Шапка със Сърце",
+    "product.gift-2.name": "Вълнен Пуловер с Кабелно Плетене и Сърце",
+    "product.gift-3.name": "Кашмирен Подаръчен Шал",
+    "product.gift-4.name": "Памучен Комплект за Релакс",
+
     // Product Descriptions
     "product.him-1.description": "Вечен вълнен пуловер, проектиран за ежедневен комфорт. Топъл, мек и издръжлив—перфектен за наслагване или носене самостоятелно.",
     "product.him-2.description": "Лек памучен пуловер, който балансира дишане с структурирана силует. Идеален за всяко време на годината.",
@@ -694,6 +763,39 @@ const translations: Record<Language, Translations> = {
     "product.gift-2.description": "Класически пуловер с кабелно плетене и фини тъкани с вдъхновен от сърце мотив—перфектен за смислен подарък.",
     "product.gift-3.description": "Изключително мек шал, проектиран за подаряване на близки (или на себе си). Деликатна текстура и вечен стил.",
     "product.gift-4.description": "Лек, дишащ двучастиен комплект (топ + мини шал) направен за уютни моменти. Перфектен за грижовни пакети или вмислени изненади.",
+
+    // Materials
+    "material.wool": "100% Вълна",
+    "material.cotton": "100% Памук",
+    "material.cashmere": "100% Кашмир",
+
+    // Categories
+    "category.forHim": "За Него",
+    "category.forHim.description": "Вечни пуловери, изработени за модерния джентълмен",
+    "category.forHer": "За Нея",
+    "category.forHer.description": "Луксозни плетива, проектирани за безпроблемна елегантност",
+    "category.forKids": "За Деца",
+    "category.forKids.description": "Нежна топлина за най-важните за вас",
+    "category.gifts": "Подаръци",
+    "category.gifts.description": "Вмислени изделия за сърца, които цените",
+
+    // Colors
+    "color.charcoal": "Въглен",
+    "color.cream": "Крем",
+    "color.deepNavy": "Тъмно Синьо",
+    "color.lightGrey": "Светло Сиво",
+    "color.sand": "Пясък",
+    "color.forestGreen": "Горско Зелено",
+    "color.softPink": "Нежно Розово",
+    "color.burgundy": "Бордо",
+
+    // Product Detail Page
+    "productDetail.addToBag": "Добави в Чантата",
+    "productDetail.specialPiece": "Специално Изделие",
+    "productDetail.freeShippingOver": "Безплатна доставка за поръчки над €150",
+    "productDetail.returnsPolicy": "30-дневна политика за връщане",
+    "productDetail.qualityGuarantee": "2-годишна гаранция за качество",
+    "common.explore": "Разгледай",
   },
 }
 

@@ -50,6 +50,41 @@ function ProductDetailContent() {
     Burgundy: "#800020",
   }
 
+  // Helper functions for translations
+  const getTranslatedName = (productId: string, defaultName: string) => {
+    return t(`product.${productId}.name`) || defaultName
+  }
+
+  const getTranslatedMaterial = (material: string) => {
+    if (material.includes("Wool")) return t("material.wool")
+    if (material.includes("Cotton")) return t("material.cotton")
+    if (material.includes("Cashmere")) return t("material.cashmere")
+    return material
+  }
+
+  const getTranslatedCategory = (category: string) => {
+    if (category === "For Him") return t("category.forHim")
+    if (category === "For Her") return t("category.forHer")
+    if (category === "For Kids") return t("category.forKids")
+    if (category === "Gifts") return t("category.gifts")
+    return category
+  }
+
+  const getTranslatedColor = (color: string) => {
+    const colorMap: Record<string, string> = {
+      Charcoal: "color.charcoal",
+      Cream: "color.cream",
+      "Deep Navy": "color.deepNavy",
+      "Light Grey": "color.lightGrey",
+      Sand: "color.sand",
+      "Forest Green": "color.forestGreen",
+      "Soft Pink": "color.softPink",
+      Burgundy: "color.burgundy",
+    }
+    const key = colorMap[color]
+    return key ? t(key) : color
+  }
+
   return (
     <>
       <Header />
@@ -58,9 +93,9 @@ function ProductDetailContent() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
           <Breadcrumb
             items={[
-              { label: "Shop", href: "/shop" },
-              { label: category?.name || "", href: `/shop/${product.categorySlug}` },
-              { label: product.name },
+              { label: t("nav.shop"), href: "/shop" },
+              { label: category ? getTranslatedCategory(category.name) : "", href: `/shop/${product.categorySlug}` },
+              { label: getTranslatedName(product.id, product.name) },
             ]}
           />
 
@@ -69,21 +104,25 @@ function ProductDetailContent() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-secondary">
               <Image
                 src={product.image || "/placeholder.svg"}
-                alt={product.name}
+                alt={getTranslatedName(product.id, product.name)}
                 fill
                 className="object-cover"
                 priority
               />
               {product.isSpecial && (
-                <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">Special Piece</Badge>
+                <Badge className="absolute top-4 left-4 bg-accent text-accent-foreground">
+                  {t("productDetail.specialPiece")}
+                </Badge>
               )}
             </div>
 
             {/* Product Info */}
             <div className="flex flex-col">
               <div>
-                <p className="text-sm text-muted-foreground">{product.category}</p>
-                <h1 className="mt-2 text-3xl lg:text-4xl font-semibold text-foreground">{product.name}</h1>
+                <p className="text-sm text-muted-foreground">{getTranslatedCategory(product.category)}</p>
+                <h1 className="mt-2 text-3xl lg:text-4xl font-semibold text-foreground">
+                  {getTranslatedName(product.id, product.name)}
+                </h1>
                 <p className="mt-4 text-2xl font-semibold text-foreground">€{product.price}</p>
               </div>
 
@@ -93,13 +132,13 @@ function ProductDetailContent() {
 
               <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
                 <Check className="h-4 w-4 text-primary" />
-                <span>{product.material}</span>
+                <span>{getTranslatedMaterial(product.material)}</span>
               </div>
 
               {/* Color Selection */}
               <div className="mt-8">
                 <h3 className="text-sm font-medium text-foreground">
-                  Color: <span className="text-muted-foreground">{selectedColor}</span>
+                  {t("productDetail.color")}: <span className="text-muted-foreground">{getTranslatedColor(selectedColor)}</span>
                 </h3>
                 <div className="mt-3 flex flex-wrap gap-3">
                   {product.colors.map((color) => (
@@ -112,9 +151,9 @@ function ProductDetailContent() {
                           : "border-border hover:border-primary/50"
                       }`}
                       style={{ backgroundColor: colorMap[color] || "#ccc" }}
-                      title={color}
+                      title={getTranslatedColor(color)}
                     >
-                      <span className="sr-only">{color}</span>
+                      <span className="sr-only">{getTranslatedColor(color)}</span>
                     </button>
                   ))}
                 </div>
@@ -123,9 +162,9 @@ function ProductDetailContent() {
               {/* Size Selection */}
               <div className="mt-8">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-medium text-foreground">Size</h3>
+                  <h3 className="text-sm font-medium text-foreground">{t("productDetail.size")}</h3>
                   <Link href="/delivery#size-guide" className="text-sm text-primary hover:underline">
-                    Size Guide
+                    {t("delivery.sizeGuide")}
                   </Link>
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -147,22 +186,22 @@ function ProductDetailContent() {
 
               {/* Add to Cart */}
               <Button size="lg" className="mt-8 w-full" onClick={handleAddToCart}>
-                Add to Bag — €{product.price}
+                {t("productDetail.addToBag")} — €{product.price}
               </Button>
 
               {/* Product Benefits */}
               <div className="mt-8 pt-8 border-t border-border space-y-4">
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Truck className="h-5 w-5" />
-                  <span>Free shipping on orders over €150</span>
+                  <span>{t("productDetail.freeShippingOver")}</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <RotateCcw className="h-5 w-5" />
-                  <span>30-day returns policy</span>
+                  <span>{t("productDetail.returnsPolicy")}</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Shield className="h-5 w-5" />
-                  <span>2-year quality guarantee</span>
+                  <span>{t("productDetail.qualityGuarantee")}</span>
                 </div>
               </div>
             </div>
@@ -171,7 +210,7 @@ function ProductDetailContent() {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <section className="mt-20">
-              <h2 className="text-2xl font-semibold text-foreground mb-8">You May Also Like</h2>
+              <h2 className="text-2xl font-semibold text-foreground mb-8">{t("productDetail.youMayAlsoLike")}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts.map((p) => (
                   <ProductCard key={p.id} product={p} />

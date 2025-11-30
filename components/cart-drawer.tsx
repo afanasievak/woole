@@ -15,6 +15,25 @@ export function CartDrawer() {
   const FREE_SHIPPING_THRESHOLD = 250
   const amountToFreeShipping = FREE_SHIPPING_THRESHOLD - totalPrice
 
+  const getTranslatedName = (productId: string, defaultName: string) => {
+    return t(`product.${productId}.name`) || defaultName
+  }
+
+  const getTranslatedColor = (color: string) => {
+    const colorMap: Record<string, string> = {
+      Charcoal: "color.charcoal",
+      Cream: "color.cream",
+      "Deep Navy": "color.deepNavy",
+      "Light Grey": "color.lightGrey",
+      Sand: "color.sand",
+      "Forest Green": "color.forestGreen",
+      "Soft Pink": "color.softPink",
+      Burgundy: "color.burgundy",
+    }
+    const key = colorMap[color]
+    return key ? t(key) : color
+  }
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetContent className="w-full sm:max-w-lg bg-background flex flex-col">
@@ -59,7 +78,7 @@ export function CartDrawer() {
                     <div className="relative h-24 w-20 flex-shrink-0 overflow-hidden rounded-md bg-secondary">
                       <Image
                         src={item.product.image || "/placeholder.svg"}
-                        alt={item.product.name}
+                        alt={getTranslatedName(item.product.id, item.product.name)}
                         fill
                         className="object-cover"
                       />
@@ -67,9 +86,11 @@ export function CartDrawer() {
                     <div className="flex flex-1 flex-col">
                       <div className="flex justify-between">
                         <div>
-                          <h3 className="text-sm font-medium text-foreground">{item.product.name}</h3>
+                          <h3 className="text-sm font-medium text-foreground">
+                            {getTranslatedName(item.product.id, item.product.name)}
+                          </h3>
                           <p className="mt-1 text-xs text-muted-foreground">
-                            {item.selectedColor} / {item.selectedSize}
+                            {getTranslatedColor(item.selectedColor)} / {item.selectedSize}
                           </p>
                         </div>
                         <button

@@ -21,6 +21,19 @@ export default function CategoryPage() {
   const [selectedMaterial, setSelectedMaterial] = useState(t("shop.allMaterials"))
   const [selectedSort, setSelectedSort] = useState("featured")
 
+  const getTranslatedCategory = (categoryName: string) => {
+    if (categoryName === "For Him") return t("category.forHim")
+    if (categoryName === "For Her") return t("category.forHer")
+    if (categoryName === "For Kids") return t("category.forKids")
+    if (categoryName === "Gifts") return t("category.gifts")
+    return categoryName
+  }
+
+  const getTranslatedDescription = (categorySlug: string, defaultDescription: string) => {
+    const key = `category.${categorySlug}.description`
+    return t(key) || defaultDescription
+  }
+
   const categoryProducts = getProductsByCategory(categorySlug)
 
   const filteredProducts = useMemo(() => {
@@ -66,14 +79,14 @@ export default function CategoryPage() {
           <div className="absolute inset-0 bg-foreground/40" />
           <div className="absolute inset-0 flex items-center justify-center text-center">
             <div>
-              <h1 className="text-3xl lg:text-5xl font-semibold text-card">{category.name}</h1>
-              <p className="mt-2 text-lg text-card/90">{category.description}</p>
+              <h1 className="text-3xl lg:text-5xl font-semibold text-card">{getTranslatedCategory(category.name)}</h1>
+              <p className="mt-2 text-lg text-card/90">{getTranslatedDescription(category.slug, category.description)}</p>
             </div>
           </div>
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-          <Breadcrumb items={[{ label: t("shop.breadcrumb"), href: "/shop" }, { label: category.name }]} />
+          <Breadcrumb items={[{ label: t("shop.breadcrumb"), href: "/shop" }, { label: getTranslatedCategory(category.name) }]} />
 
           <ProductFilters
             selectedMaterial={selectedMaterial}
