@@ -4,7 +4,6 @@ import { useState, useMemo } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider } from "@/lib/cart-context"
 import { ProductGrid } from "@/components/product-grid"
 import { ProductFilters } from "@/components/product-filters"
 import { Breadcrumb } from "@/components/breadcrumb"
@@ -41,7 +40,7 @@ export default function ShopPage() {
   }, [selectedMaterial, selectedSort])
 
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main className="min-h-screen">
@@ -69,6 +68,6 @@ export default function ShopPage() {
         </div>
       </main>
       <Footer />
-    </CartProvider>
+    </>
   )
 }

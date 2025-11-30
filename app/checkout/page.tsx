@@ -5,7 +5,7 @@ import type React from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider, useCart } from "@/lib/cart-context"
+import { useCart } from "@/lib/cart-context"
 import { useI18n } from "@/lib/i18n-context"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { Button } from "@/components/ui/button"
@@ -537,13 +537,13 @@ function CheckoutContent() {
 
 export default function CheckoutPage() {
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main className="min-h-screen bg-muted/30">
         <CheckoutContent />
       </main>
       <Footer />
-    </CartProvider>
+    </>
   )
 }

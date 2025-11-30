@@ -6,7 +6,6 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider } from "@/lib/cart-context"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { getBlogPostById, getAllBlogPosts } from "@/lib/blog"
 import { Calendar, Clock, ArrowLeft } from "lucide-react"
@@ -121,10 +120,6 @@ function BlogDetailContent() {
 }
 
 export default function BlogDetailPage() {
-  return (
-    <CartProvider>
-      <BlogDetailContent />
-    </CartProvider>
-  )
+  return <BlogDetailContent />
 }
 

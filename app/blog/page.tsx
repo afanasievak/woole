@@ -3,7 +3,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CartDrawer } from "@/components/cart-drawer"
-import { CartProvider } from "@/lib/cart-context"
 import { Breadcrumb } from "@/components/breadcrumb"
 import { getAllBlogPosts } from "@/lib/blog"
 import Image from "next/image"
@@ -15,7 +14,7 @@ export default function BlogPage() {
   const posts = getAllBlogPosts()
 
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main className="min-h-screen">
@@ -88,7 +87,7 @@ export default function BlogPage() {
         </div>
       </main>
       <Footer />
-    </CartProvider>
+    </>
   )
 }
 

@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CartProvider } from "@/lib/cart-context";
 import { useI18n } from "@/lib/i18n-context";
 import { Clock, Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
@@ -31,7 +30,7 @@ export default function ContactPage() {
   };
 
   return (
-    <CartProvider>
+    <>
       <Header />
       <CartDrawer />
       <main className="min-h-screen">
@@ -275,6 +274,6 @@ export default function ContactPage() {
         </div>
       </main>
       <Footer />
-    </CartProvider>
+    </>
   );
 }
