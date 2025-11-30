@@ -806,6 +806,12 @@ interface I18nContextType {
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
+const materials = [
+  { value: "All Materials", label: t("shop.allMaterials") },
+  { value: "Wool", label: "Вълна" },
+  { value: "Cashmere", label: "Кашмир" },
+  { value: "Cotton", label: "Памук" },
+]
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>("en")
